@@ -1,0 +1,16 @@
+name: Refresh Dependency Graph
+
+on:
+  schedule:
+    - cron: "0 1 * * *" # daily at 1:00 AM UTC
+  workflow_dispatch:
+
+permissions:
+    contents: write
+
+jobs:
+  refresh:
+    uses: tsumrad/shared-gha-tools/.github/workflows/dependency-graph-refresh.yml@sbom-generation
+    with:
+      artifact_retention_days: 7
+      graph_refresh_args: 'NpmLockfile3=Disabled,Pip=EnableIfDefaultOff,Poetry=EnableIfDefaultOff,Dockerfile=Disabled'
