@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-slate-100 text-slate-900;
+}
+
+.btn-primary {
+  @apply rounded-md bg-blue-600 px-4 py-2 font-medium text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60;
+}
+
+.btn-secondary {
+  @apply rounded-md bg-slate-200 px-4 py-2 font-medium text-slate-800 hover:bg-slate-300;
+}
+
+.input {
+  @apply w-full rounded-md border border-slate-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200;
+}
+
+.card {
+  @apply rounded-xl bg-white p-6 shadow-sm;
+}
